@@ -12,18 +12,13 @@ def playerMove():
         return move
 
 def playerChoice():
-    valid=False
     
-    while valid==False:
+    while True:
         playerChoice=playerMove()
-        if playerChoice<1 | playerChoice>9:
-            print("Invalid number range ")
-            playerMove()
-        else:
-            print ("Move accepted ")
-            valid=True
+        if 0<playerChoice<10:
+            print("Move Accepted")
             break
-
+        print ("Invalid number range entered: ")
     return playerChoice
 
 
