@@ -11,11 +11,27 @@ def playerMove():
             continue
         return move
 
+def playerChoice():
+    valid=False
+    
+    while valid==False:
+        playerChoice=playerMove()
+        if playerChoice<1 | playerChoice>9:
+            print("Invalid number range ")
+            playerMove()
+        else:
+            print ("Move accepted ")
+            valid=True
+            break
+
+    return playerChoice
+
+
 board=[0,1,2,3,4,5,6,7,8]
 
 showBoard(board)
 
-playerMove()
+playerChoice()
 
 
 
