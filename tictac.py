@@ -1,6 +1,6 @@
 def showBoard(board):
     print(board)
-
+#####################################################################################################
 def playerMove():
     move=''
     while move=='':
@@ -10,7 +10,7 @@ def playerMove():
             print ("Incorrect ")
             continue
         return move
-
+############################################################################################################
 def playerChoice():
     while True:
         playerChoice=playerMove()
@@ -20,21 +20,21 @@ def playerChoice():
             break
         print ("Invalid number range entered: ")
     return playerChoice
-
+##########################################################################################################
 def enterChoiceOnBoard(choice):
     if board[choice-1]=='X':
         print("This position is taken ")
         playerChoice()
     else:
         board[choice-1]='X'
-
+###############################################################################################################
 def playGame():
     count=0
     while count<9:
         playerChoice()
         showBoard(board)
         count+=1
-
+###############################################################################################################
 board=[0,1,2,3,4,5,6,7,8]
 playGame()
 
