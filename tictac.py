@@ -12,7 +12,6 @@ def playerMove():
         return move
 
 def playerChoice():
-    
     while True:
         playerChoice=playerMove()
         if 0<playerChoice<10:
@@ -29,13 +28,22 @@ def enterChoiceOnBoard(choice):
     else:
         board[choice-1]='X'
 
-board=[0,1,'X',3,4,5,6,7,8]
+def playGame():
+    count=0
+    while count<9:
+        playerChoice()
+        showBoard(board)
+        count+=1
 
-showBoard(board)
+board=[0,1,2,3,4,5,6,7,8]
+playGame()
 
-playerChoice()
 
-showBoard(board)
+#showBoard(board)
+
+#playerChoice()
+
+#showBoard(board)
 
 
 
