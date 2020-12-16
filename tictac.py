@@ -30,9 +30,16 @@ def enterChoiceOnBoard(choice):
 ###############################################################################################################
 def playGame():
     count=0
+    player=''
     while count<9:
+        if count%2==1:
+            player="Player 1"
+        else:
+            player="Player 2"
         playerChoice()
         showBoard(board)
+        print("Your Turn")
+        print(player)
         count+=1
 ###############################################################################################################
 board=[0,1,'X',3,'O',5,6,7,8]
