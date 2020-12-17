@@ -11,22 +11,24 @@ def playerMove():
             continue
         return move
 ############################################################################################################
-def playerChoice():
+def playerChoice(player):
     while True:
         playerChoice=playerMove()
         if 0<playerChoice<10:
-            enterChoiceOnBoard(playerChoice)
+            enterChoiceOnBoard(playerChoice, player)
             print("Move Accepted ")
             break
         print ("Invalid number range entered: ")
     return playerChoice
 ##########################################################################################################
-def enterChoiceOnBoard(choice):
+def enterChoiceOnBoard(choice, player):
     if board[choice-1]=='X' or board[choice-1]=='O':
         print("This position is taken ")
-        playerChoice()
-    else:
+        playerChoice(player)
+    if player=='Player 1':
         board[choice-1]='X'
+    else:
+        board[choice-1]='O'
 ###############################################################################################################
 def playGame():
     count=0
@@ -36,7 +38,7 @@ def playGame():
             player="Player 1"
         else:
             player="Player 2"
-        playerChoice()
+        playerChoice(player)
         showBoard(board)
         print("Your Turn")
         print(player)
