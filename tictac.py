@@ -44,6 +44,11 @@ def playGame():
         print(player)
         count+=1
 ###############################################################################################################
+def checkWinner(board):
+    winner=False
+    if board[0]=='X' and board[1]=='X' and board[2]=='X':
+
+
 board=[0,1,'X',3,'O',5,6,7,8]
 playGame()
 
