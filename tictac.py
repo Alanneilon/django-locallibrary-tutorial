@@ -1,5 +1,7 @@
 def showBoard(board):
-    print(board)
+    print("1.|" +board[0]+ "| 2.|" +board[1]+ "| 3.|" +board[2]+ "| ")
+    print("4.|" +board[3]+ "| 5.|" +board[4]+ "| 6.|" +board[5]+ "| ")
+    print("7.|" +board[6]+ "| 8.|" +board[7]+ "| 9.|" +board[8]+ "| ")
 #####################################################################################################
 def playerMove():
     move=''
@@ -35,9 +37,9 @@ def playGame():
     player=''
     while count<9:
         if count%2==1:
-            player="Player 1"
-        else:
             player="Player 2"
+        else:
+            player="Player 1"
         showBoard(board)
         playerChoice(player)
         showBoard(board)
@@ -45,8 +47,9 @@ def playGame():
             break
         else:
             print("Your Turn")
-        print(player)
         count+=1
+        print(player)
+        
 ###############################################################################################################
 def checkWinner(board):
     winner=False
@@ -120,9 +123,18 @@ def checkWinner(board):
 
     return winner
 
+###############################################################################################################
+def clear(): 
+    # for windows 
+    if name == 'nt': 
+        _ = system('cls') 
+    # for mac and linux(here, os.name is 'posix') 
+    else: 
+        _ = system('clear')
 
 
-board=[0,1,2,3,4,5,6,7,8]
+
+board=[' ',' ',' ',' ',' ',' ',' ',' ',' ']
 playGame()
 
 
