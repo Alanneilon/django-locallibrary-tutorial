@@ -63,9 +63,10 @@ def playGame():
         if checkWinner(board)==True:
             break
         else:
-            print("Your Turn")
+            print("Thank you ")
+            print(player)
+            print("Next Player please ")
         count+=1
-        print(player)
         
 ###############################################################################################################
 #Function to check if there is a winner. This will be a boolean function which will return true for false.
@@ -143,15 +144,6 @@ def checkWinner(board):
 
     return winner
 
-###############################################################################################################
-#Function to clear the screen
-def clear(): 
-    # for windows 
-    if name == 'nt': 
-        _ = system('cls') 
-    # for mac and linux(here, os.name is 'posix') 
-    else: 
-        _ = system('clear')
 ###############################################################################################################
 #main program. Initialise the board values as blank strings then call the main function to play the game
 
